@@ -1,0 +1,1 @@
+[{"model": "backend_api.tasksstatus", "pk": 1, "fields": {"status": "new"}}, {"model": "backend_api.tasksstatus", "pk": 2, "fields": {"status": "in_work"}}, {"model": "backend_api.tasksstatus", "pk": 3, "fields": {"status": "done"}}]

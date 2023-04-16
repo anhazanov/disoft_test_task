@@ -43,7 +43,8 @@ CUSTOM_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
-    'django_filters'
+    'django_filters',
+    'rest_framework_swagger'
 ]
 
 INSTALLED_APPS += CUSTOM_APPS
@@ -64,7 +65,7 @@ ROOT_URLCONF = 'main_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'main_app', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

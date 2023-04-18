@@ -1,4 +1,5 @@
 from rest_framework.serializers import ModelSerializer, StringRelatedField, SlugRelatedField, SerializerMethodField
+from django.contrib.auth.models import User
 
 from .models import TasksStatus, Tasks, TasksImages, Comments
 
@@ -11,7 +12,7 @@ class TasksStatusSerializer(ModelSerializer):
 
 class TasksSerializer(ModelSerializer):
     author = SlugRelatedField(read_only=True, slug_field='username')
-    performers = SlugRelatedField(many=True, read_only=True, slug_field='username')
+    performers = SlugRelatedField(many=True, queryset=User.objects.all(), slug_field='username')
     status = StringRelatedField()
     images = SerializerMethodField()
     comments = SerializerMethodField()
